@@ -1,0 +1,23 @@
+{
+    "name": "pupax/systemd-wrapper",
+    "description": "PHP wrapper around systemd",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Andrea Ruggiero",
+            "email": "andrea@pupax.me"
+        }
+    ],
+    "require": {
+        "php": "^7.0",
+        "ext-mbstring": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Pupax\\SystemdWrapper\\": "src/Pupax/SystemdWrapper"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.5"
+    }
+}
