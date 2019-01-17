@@ -13,19 +13,15 @@ use Pupax\SystemdWrapper\Models\ListUnitsRow;
 use Pupax\SystemdWrapper\Timer;
 use Pupax\SystemdWrapper\Utils\TableParser;
 
-class ListUnits
+class ListUnits extends AbstractCommand
 {
 
-    private $commandExecutor;
-
-    public function __construct(CommandExecutorInterface $commandExecutor)
-    {
-        $this->commandExecutor = $commandExecutor;
-    }
-
+    /**
+     * @return ListUnitsRow[]
+     */
     public function getUnits()
     {
-        $output = $this->commandExecutor->execute(['systemctl', 'list-units', '--all', '--no-pager']);
+        $output = $this->getCommandExecutor()->execute(['systemctl', 'list-units', '--all', '--no-pager']);
 
         $table = new TableParser($output->getOutput());
         return array_map(function ($row) {

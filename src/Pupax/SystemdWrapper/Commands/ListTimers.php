@@ -12,19 +12,15 @@ use Pupax\SystemdWrapper\CommandExecutor\CommandExecutorInterface;
 use Pupax\SystemdWrapper\Models\ListTimersRow;
 use Pupax\SystemdWrapper\Utils\TableParser;
 
-class ListTimers
+class ListTimers extends AbstractCommand
 {
 
-    private $commandExecutor;
-
-    public function __construct(CommandExecutorInterface $commandExecutor)
-    {
-        $this->commandExecutor = $commandExecutor;
-    }
-
+    /**
+     * @return ListTimersRow[]
+     */
     public function getTimers()
     {
-        $output = $this->commandExecutor->execute(['systemctl', 'list-timers', '--all', '--no-pager']);
+        $output = $this->getCommandExecutor()->execute(['systemctl', 'list-timers', '--all', '--no-pager']);
 
         $table = new TableParser($output->getOutput());
         return array_map(function ($row) {

@@ -14,7 +14,11 @@ class ListTimersTest extends \PHPUnit\Framework\TestCase
     public function testTimers()
     {
         $listTimers = new \Pupax\SystemdWrapper\Commands\ListTimers(new TestCommandExecutor());
-        //var_dump($listTimers->getTimers());
+        $timers = $listTimers->getTimers();
+
+        $this->assertEquals(3, count($timers));
+        $this->assertEquals('apt-daily.timer', $timers[0]->getUnit());
+        $this->assertEquals('apt-daily.service', $timers[0]->getActivates());
     }
 
 }
