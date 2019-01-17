@@ -1,23 +1,20 @@
 <?php
+
 /**
- * Created by PhpStorm.
- * User: andrearuggiero
- * Date: 2019-01-13
- * Time: 17:38
+ * Copyright 2019 - Andrea Ruggiero
  */
 
 namespace Pupax\SystemdWrapper\Models;
 
-
 class ListSocketsRow
 {
-
     private $listen;
     private $unit;
     private $activates;
 
     /**
      * ListSocketsRow constructor.
+     *
      * @param $listen
      * @param $unit
      * @param $activates
@@ -29,11 +26,10 @@ class ListSocketsRow
         $this->activates = $activates;
     }
 
-
     /**
      * @return string
      */
-    public function getListen() : string
+    public function getListen(): string
     {
         return $this->listen;
     }
@@ -41,7 +37,7 @@ class ListSocketsRow
     /**
      * @return string
      */
-    public function getUnit() : string
+    public function getUnit(): string
     {
         return $this->unit;
     }
@@ -49,9 +45,8 @@ class ListSocketsRow
     /**
      * @return string
      */
-    public function getActivates() : string
+    public function getActivates(): string
     {
         return $this->activates;
     }
-
 }

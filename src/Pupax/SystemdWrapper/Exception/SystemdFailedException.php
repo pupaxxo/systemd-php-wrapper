@@ -1,24 +1,21 @@
 <?php
+
 /**
- * Created by PhpStorm.
- * User: andrearuggiero
- * Date: 2019-01-17
- * Time: 21:18
+ * Copyright 2019 - Andrea Ruggiero
  */
 
 namespace Pupax\SystemdWrapper\Exception;
-
 
 use Pupax\SystemdWrapper\CommandExecutor\CommandResult;
 
 class SystemdFailedException extends \Exception
 {
-
     /** @var CommandResult */
     private $commandResult;
 
     /**
      * SystemdFailedException constructor.
+     *
      * @param CommandResult $commandResult
      */
     public function __construct(CommandResult $commandResult)
@@ -37,5 +34,4 @@ class SystemdFailedException extends \Exception
     {
         return $this->commandResult;
     }
-
 }

@@ -1,14 +1,11 @@
 <?php
+
 /**
- * Created by PhpStorm.
- * User: andrearuggiero
- * Date: 2019-01-13
- * Time: 17:08
+ * Copyright 2019 - Andrea Ruggiero
  */
 
 namespace Pupax\SystemdWrapper;
 
 class SystemdWrapper
 {
-
 }

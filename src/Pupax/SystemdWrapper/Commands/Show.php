@@ -1,9 +1,7 @@
 <?php
+
 /**
- * Created by PhpStorm.
- * User: andrearuggiero
- * Date: 2019-01-17
- * Time: 20:42
+ * Copyright 2019 - Andrea Ruggiero
  */
 
 namespace Pupax\SystemdWrapper\Commands;
@@ -15,33 +13,33 @@ use Pupax\SystemdWrapper\Utils\KeyValueParser;
 
 class Show extends AbstractCommand
 {
-
     /**
-     * @param null|string $unit Unit to check (optional)
+     * @param string|null $unit Unit to check (optional)
+     *
      * @return ShowRow|ShowUnitRow
+     *
      * @throws SystemdFailedException
      */
     public function show($unit = null)
     {
         $command = ['systemctl', 'show'];
-        if ($unit !== null) {
+        if (null !== $unit) {
             $command[] = $unit;
         }
         $command[] = '--no-pager';
 
         $processResult = $this->getCommandExecutor()->execute($command);
 
-        if ($processResult->getExitCode() !== 0) {
+        if (0 !== $processResult->getExitCode()) {
             throw new SystemdFailedException($processResult);
         }
 
         $parsed = new KeyValueParser($processResult->getOutput());
 
-        if ($unit !== null) {
+        if (null !== $unit) {
             return new ShowUnitRow($parsed);
         }
 
         return new ShowRow($parsed);
     }
-
 }

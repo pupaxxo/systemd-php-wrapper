@@ -1,23 +1,20 @@
 <?php
+
 /**
- * Created by PhpStorm.
- * User: andrearuggiero
- * Date: 2019-01-13
- * Time: 18:21
+ * Copyright 2019 - Andrea Ruggiero
  */
 
 namespace Pupax\SystemdWrapper\Utils;
 
-
 class Column
 {
-
     private $name;
     private $startIndex;
     private $endIndex;
 
     /**
      * Column constructor.
+     *
      * @param $name
      * @param $startIndex
      * @param $endIndex
@@ -52,5 +49,4 @@ class Column
     {
         return $this->endIndex;
     }
-
 }

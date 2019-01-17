@@ -1,19 +1,15 @@
 <?php
+
 /**
- * Created by PhpStorm.
- * User: andrearuggiero
- * Date: 2019-01-17
- * Time: 20:56
+ * Copyright 2019 - Andrea Ruggiero
  */
 
 namespace Pupax\SystemdWrapper\Models;
-
 
 use Pupax\SystemdWrapper\Utils\KeyValueParser;
 
 class ShowRow
 {
-
     private $parsed;
 
     public function __construct(KeyValueParser $parsed)

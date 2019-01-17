@@ -1,17 +1,13 @@
 <?php
+
 /**
- * Created by PhpStorm.
- * User: andrearuggiero
- * Date: 2019-01-13
- * Time: 17:38
+ * Copyright 2019 - Andrea Ruggiero
  */
 
 namespace Pupax\SystemdWrapper\Models;
 
-
 class ListTimersRow
 {
-
     private $next;
     private $left;
     private $last;
@@ -21,6 +17,7 @@ class ListTimersRow
 
     /**
      * Timer constructor.
+     *
      * @param $next
      * @param $left
      * @param $last
@@ -87,5 +84,4 @@ class ListTimersRow
     {
         return $this->activates;
     }
-
 }

@@ -1,17 +1,13 @@
 <?php
+
 /**
- * Created by PhpStorm.
- * User: andrearuggiero
- * Date: 2019-01-13
- * Time: 19:11
+ * Copyright 2019 - Andrea Ruggiero
  */
 
 namespace Pupax\SystemdWrapper\Models;
 
-
 class ListUnitsRow
 {
-
     /* Load status */
     const LOADED = 'loaded';
     const NOT_FOUND = 'not-found';
@@ -34,6 +30,7 @@ class ListUnitsRow
 
     /**
      * ListUnitRow constructor.
+     *
      * @param $unit
      * @param $load
      * @param $active
@@ -88,5 +85,4 @@ class ListUnitsRow
     {
         return $this->description;
     }
-
 }

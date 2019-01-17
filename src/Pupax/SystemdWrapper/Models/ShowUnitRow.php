@@ -1,19 +1,15 @@
 <?php
+
 /**
- * Created by PhpStorm.
- * User: andrearuggiero
- * Date: 2019-01-17
- * Time: 20:50
+ * Copyright 2019 - Andrea Ruggiero
  */
 
 namespace Pupax\SystemdWrapper\Models;
-
 
 use Pupax\SystemdWrapper\Utils\KeyValueParser;
 
 class ShowUnitRow
 {
-
     private $parsed;
 
     public function __construct(KeyValueParser $parsed)
@@ -955,5 +951,4 @@ class ShowUnitRow
     {
         return $this->parsed->get('InvocationID');
     }
-
 }
