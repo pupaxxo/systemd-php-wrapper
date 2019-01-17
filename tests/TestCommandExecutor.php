@@ -474,7 +474,20 @@ Perpetual=no
 StartLimitIntervalSec=10000000
 StartLimitBurst=5
 StartLimitAction=none
-InvocationID=a155255c14a043fbab55f4612f86b93a'
+InvocationID=a155255c14a043fbab55f4612f86b93a',
+        'systemctl list-sockets --all --no-pager' => 'LISTEN                          UNIT                            ACTIVATES
+/run/systemd/fsck.progress      systemd-fsckd.socket            systemd-fsckd.service
+/run/systemd/initctl/fifo       systemd-initctl.socket          systemd-initctl.service
+/run/systemd/journal/dev-log    systemd-journald-dev-log.socket systemd-journald.service
+/run/systemd/journal/socket     systemd-journald.socket         systemd-journald.service
+/run/systemd/journal/stdout     systemd-journald.socket         systemd-journald.service
+/run/systemd/journal/syslog     syslog.socket                   rsyslog.service
+/run/udev/control               systemd-udevd-control.socket    systemd-udevd.service
+/var/run/dbus/system_bus_socket dbus.socket                     dbus.service
+audit 1                         systemd-journald-audit.socket   systemd-journald.service
+kobject-uevent 1                systemd-udevd-kernel.socket     systemd-udevd.service
+
+10 sockets listed.'
     ];
 
     /**
@@ -484,10 +497,11 @@ InvocationID=a155255c14a043fbab55f4612f86b93a'
      */
     public function executeAsRoot(array $command): CommandResult
     {
-        if (isset(static::outputs[implode(' ', $command)])) {
-            return new CommandResult(0, static::outputs[implode(' ', $command)], '');
+        $cli = implode(' ', $command);
+        if (isset(static::outputs[$cli])) {
+            return new CommandResult($cli, 0, static::outputs[implode(' ', $command)], '');
         }
-        return new CommandResult(1, '', 'Command not found!');
+        return new CommandResult($cli, 1, '', 'Command not found!');
     }
 
     /**
@@ -497,9 +511,10 @@ InvocationID=a155255c14a043fbab55f4612f86b93a'
      */
     public function execute(array $command): CommandResult
     {
-        if (isset(static::outputs[implode(' ', $command)])) {
-            return new CommandResult(0, static::outputs[implode(' ', $command)], '');
+        $cli = implode(' ', $command);
+        if (isset(static::outputs[$cli])) {
+            return new CommandResult($cli, 0, static::outputs[implode(' ', $command)], '');
         }
-        return new CommandResult(1, '', 'Command not found!');
+        return new CommandResult($cli, 1, '', 'Command not found!');
     }
 }

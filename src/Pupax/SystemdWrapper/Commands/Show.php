@@ -8,6 +8,7 @@
 
 namespace Pupax\SystemdWrapper\Commands;
 
+use Pupax\SystemdWrapper\Exception\SystemdFailedException;
 use Pupax\SystemdWrapper\Models\ShowRow;
 use Pupax\SystemdWrapper\Models\ShowUnitRow;
 use Pupax\SystemdWrapper\Utils\KeyValueParser;
@@ -16,8 +17,9 @@ class Show extends AbstractCommand
 {
 
     /**
-     * @param null|string $unit
+     * @param null|string $unit Unit to check (optional)
      * @return ShowRow|ShowUnitRow
+     * @throws SystemdFailedException
      */
     public function show($unit = null)
     {
@@ -28,6 +30,11 @@ class Show extends AbstractCommand
         $command[] = '--no-pager';
 
         $processResult = $this->getCommandExecutor()->execute($command);
+
+        if ($processResult->getExitCode() !== 0) {
+            throw new SystemdFailedException($processResult);
+        }
+
         $parsed = new KeyValueParser($processResult->getOutput());
 
         if ($unit !== null) {

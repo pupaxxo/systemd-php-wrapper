@@ -10,19 +10,20 @@ namespace Pupax\SystemdWrapper\Commands;
 
 use Pupax\SystemdWrapper\CommandExecutor\CommandExecutorInterface;
 use Pupax\SystemdWrapper\Exception\SystemdFailedException;
+use Pupax\SystemdWrapper\Models\ListSocketsRow;
 use Pupax\SystemdWrapper\Models\ListTimersRow;
 use Pupax\SystemdWrapper\Utils\TableParser;
 
-class ListTimers extends AbstractCommand
+class ListSockets extends AbstractCommand
 {
 
     /**
-     * @return ListTimersRow[]
+     * @return ListSocketsRow[]
      * @throws SystemdFailedException
      */
-    public function getTimers()
+    public function getSockets()
     {
-        $processResult = $this->getCommandExecutor()->execute(['systemctl', 'list-timers', '--all', '--no-pager']);
+        $processResult = $this->getCommandExecutor()->execute(['systemctl', 'list-sockets', '--all', '--no-pager']);
 
         if ($processResult->getExitCode() !== 0) {
             throw new SystemdFailedException($processResult);
@@ -30,7 +31,7 @@ class ListTimers extends AbstractCommand
 
         $table = new TableParser($processResult->getOutput());
         return array_map(function ($row) {
-            return new ListTimersRow($row['next'], $row['left'], $row['last'], $row['passed'], $row['unit'], $row['activates']);
+            return new ListSocketsRow($row['listen'], $row['unit'], $row['activates']);
         }, $table->getRowsAssoc());
     }
 

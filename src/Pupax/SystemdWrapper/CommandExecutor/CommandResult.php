@@ -14,15 +14,18 @@ class CommandResult
     private $exitCode;
     private $output;
     private $errorOutput;
+    private $command;
 
     /**
      * CommandResult constructor.
+     * @param $command
      * @param $exitCode
      * @param $output
      * @param $errorOutput
      */
-    public function __construct(int $exitCode, string $output, string $errorOutput)
+    public function __construct(string $command, int $exitCode, string $output, string $errorOutput)
     {
+        $this->command = $command;
         $this->exitCode = $exitCode;
         $this->output = $output;
         $this->errorOutput = $errorOutput;
@@ -53,6 +56,15 @@ class CommandResult
     public function getErrorOutput() : string
     {
         return $this->errorOutput;
+    }
+
+    /**
+     * Get executed command
+     * @return string
+     */
+    public function getCommand(): string
+    {
+        return $this->command;
     }
 
 }
