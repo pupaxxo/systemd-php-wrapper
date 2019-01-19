@@ -1,19 +1,16 @@
 <?php
+
 /**
- * Created by PhpStorm.
- * User: andrearuggiero
- * Date: 2019-01-13
- * Time: 17:43
+ * Copyright 2019 - Andrea Ruggiero
  */
 
 require_once __DIR__ . '/TestCommandExecutor.php';
 
 class ListShowTest extends \PHPUnit\Framework\TestCase
 {
-
     public function testShow()
     {
-        $wrapper = new \Pupax\SystemdWrapper\Commands\Show(new TestCommandExecutor());
+        $wrapper = new \Pupax\SystemdWrapper\Commands\ShowWrapper(new TestCommandExecutor());
         $systemInfo = $wrapper->show();
 
         $this->assertEquals(86, count($systemInfo->getProps()));
@@ -23,7 +20,7 @@ class ListShowTest extends \PHPUnit\Framework\TestCase
 
     public function testShowUnit()
     {
-        $wrapper = new \Pupax\SystemdWrapper\Commands\Show(new TestCommandExecutor());
+        $wrapper = new \Pupax\SystemdWrapper\Commands\ShowWrapper(new TestCommandExecutor());
         $unitInfo = $wrapper->show('cron');
 
         $this->assertEquals(186, count($unitInfo->getProps()));
@@ -31,5 +28,4 @@ class ListShowTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals('434', $unitInfo->getMainPID());
         $this->assertEquals('cron.service', $unitInfo->getNames());
     }
-
 }

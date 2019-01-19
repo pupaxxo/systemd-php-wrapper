@@ -8,7 +8,7 @@ namespace Pupax\SystemdWrapper\Commands;
 
 use Pupax\SystemdWrapper\CommandExecutor\CommandExecutorInterface;
 
-abstract class AbstractCommand
+abstract class AbstractCommandWrapper
 {
     /** @var CommandExecutorInterface */
     private $commandExecutor;

@@ -1,0 +1,55 @@
+stages:
+  - check
+
+before_script:
+  - apt-get update && apt-get install -y zlib1g-dev && docker-php-ext-install zip
+  - curl https://getcomposer.org/download/1.8.0/composer.phar > /usr/local/bin/composer
+  - chmod +x /usr/local/bin/composer
+  - composer install
+
+.check-code-template:
+  image: php:$PHP_VERSION
+  variables:
+    COMMIT_RANGE: HEAD~..HEAD
+  script:
+    - scripts/check-code.sh
+  stage: check
+
+.phpunit-template:
+  image: php:$PHP_VERSION
+  coverage: /^\s*Lines:\s*\d+.\d+\%/
+  script:
+    - pecl install xdebug
+    - docker-php-ext-enable xdebug
+    - vendor/bin/phpunit --coverage-text --colors=never
+  stage: check
+
+check-code-70:
+  extends: .check-code-template
+  variables:
+    PHP_VERSION: '7.0'
+
+check-code-71:
+  extends: .check-code-template
+  variables:
+    PHP_VERSION: '7.1'
+
+check-code-72:
+  extends: .check-code-template
+  variables:
+    PHP_VERSION: '7.2'
+
+phpunit-70:
+  extends: .phpunit-template
+  variables:
+    PHP_VERSION: '7.0'
+
+phpunit-71:
+  extends: .phpunit-template
+  variables:
+    PHP_VERSION: '7.1'
+
+phpunit-72:
+  extends: .phpunit-template
+  variables:
+    PHP_VERSION: '7.2'

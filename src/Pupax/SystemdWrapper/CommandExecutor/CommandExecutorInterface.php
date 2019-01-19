@@ -25,4 +25,10 @@ interface CommandExecutorInterface
      * @return CommandResult
      */
     public function execute(array $command): CommandResult;
+
+    /**
+     * Get systemctl binary path
+     * @return string
+     */
+    public function getSystemCtlBinary(): string;
 }

@@ -10,7 +10,7 @@ use Pupax\SystemdWrapper\Exception\SystemdFailedException;
 use Pupax\SystemdWrapper\Models\ListSocketsRow;
 use Pupax\SystemdWrapper\Utils\TableParser;
 
-class ListSockets extends AbstractCommand
+class ListSocketsWrapper extends AbstractCommandWrapper
 {
     /**
      * @return ListSocketsRow[]
@@ -19,7 +19,7 @@ class ListSockets extends AbstractCommand
      */
     public function getSockets()
     {
-        $processResult = $this->getCommandExecutor()->execute(['systemctl', 'list-sockets', '--all', '--no-pager']);
+        $processResult = $this->getCommandExecutor()->execute([$this->getCommandExecutor()->getSystemCtlBinary(), 'list-sockets', '--all', '--no-pager']);
 
         if (0 !== $processResult->getExitCode()) {
             throw new SystemdFailedException($processResult);

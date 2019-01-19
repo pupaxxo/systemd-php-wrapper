@@ -11,7 +11,7 @@ use Pupax\SystemdWrapper\Models\ShowRow;
 use Pupax\SystemdWrapper\Models\ShowUnitRow;
 use Pupax\SystemdWrapper\Utils\KeyValueParser;
 
-class Show extends AbstractCommand
+class ShowWrapper extends AbstractCommandWrapper
 {
     /**
      * @param string|null $unit Unit to check (optional)
@@ -22,7 +22,7 @@ class Show extends AbstractCommand
      */
     public function show($unit = null)
     {
-        $command = ['systemctl', 'show'];
+        $command = [$this->getCommandExecutor()->getSystemCtlBinary(), 'show'];
         if (null !== $unit) {
             $command[] = $unit;
         }

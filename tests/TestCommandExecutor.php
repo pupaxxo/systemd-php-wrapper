@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Copyright 2019 - Andrea Ruggiero
+ */
+
 use Pupax\SystemdWrapper\CommandExecutor\CommandExecutorInterface;
 use Pupax\SystemdWrapper\CommandExecutor\CommandResult;
 
@@ -12,7 +16,6 @@ use Pupax\SystemdWrapper\CommandExecutor\CommandResult;
 
 class TestCommandExecutor implements CommandExecutorInterface
 {
-
     const outputs = [
         'systemctl list-timers --all --no-pager' => 'NEXT                         LEFT          LAST                         PASSED       UNIT                         ACTIVATES
 Sun 2019-01-13 23:01:16 CET  5h 16min left Sun 2019-01-13 15:21:07 CET  2h 23min ago apt-daily.timer              apt-daily.service
@@ -516,5 +519,14 @@ kobject-uevent 1                systemd-udevd-kernel.socket     systemd-udevd.se
             return new CommandResult($cli, 0, static::outputs[implode(' ', $command)], '');
         }
         return new CommandResult($cli, 1, '', 'Command not found!');
+    }
+
+    /**
+     * Get systemctl binary path
+     * @return string
+     */
+    public function getSystemCtlBinary(): string
+    {
+        return 'systemctl';
     }
 }

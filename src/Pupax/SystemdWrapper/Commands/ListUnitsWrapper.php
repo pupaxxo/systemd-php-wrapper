@@ -7,19 +7,19 @@
 namespace Pupax\SystemdWrapper\Commands;
 
 use Pupax\SystemdWrapper\Exception\SystemdFailedException;
-use Pupax\SystemdWrapper\Models\ListTimersRow;
+use Pupax\SystemdWrapper\Models\ListUnitsRow;
 use Pupax\SystemdWrapper\Utils\TableParser;
 
-class ListTimers extends AbstractCommand
+class ListUnitsWrapper extends AbstractCommandWrapper
 {
     /**
-     * @return ListTimersRow[]
+     * @return ListUnitsRow[]
      *
      * @throws SystemdFailedException
      */
-    public function getTimers()
+    public function getUnits()
     {
-        $processResult = $this->getCommandExecutor()->execute(['systemctl', 'list-timers', '--all', '--no-pager']);
+        $processResult = $this->getCommandExecutor()->execute([$this->getCommandExecutor()->getSystemCtlBinary(), 'list-units', '--all', '--no-pager']);
 
         if (0 !== $processResult->getExitCode()) {
             throw new SystemdFailedException($processResult);
@@ -28,7 +28,7 @@ class ListTimers extends AbstractCommand
         $table = new TableParser($processResult->getOutput());
 
         return array_map(function ($row) {
-            return new ListTimersRow($row['next'], $row['left'], $row['last'], $row['passed'], $row['unit'], $row['activates']);
+            return new ListUnitsRow($row['unit'], $row['load'], $row['active'], $row['sub'], $row['description']);
         }, $table->getRowsAssoc());
     }
 }

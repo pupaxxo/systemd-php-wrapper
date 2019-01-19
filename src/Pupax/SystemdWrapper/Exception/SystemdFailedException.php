@@ -20,10 +20,12 @@ class SystemdFailedException extends \Exception
      */
     public function __construct(CommandResult $commandResult)
     {
-        parent::__construct(sprintf('%s exited with %d: %s',
+        parent::__construct(sprintf(
+            '%s exited with %d: %s',
             $commandResult->getCommand(),
             $commandResult->getExitCode(),
-            $commandResult->getErrorOutput()));
+            $commandResult->getErrorOutput()
+        ));
         $this->commandResult = $commandResult;
     }
 
