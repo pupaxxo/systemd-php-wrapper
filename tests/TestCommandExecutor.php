@@ -27,21 +27,21 @@ Mon 2019-01-14 14:59:07 CET  21h left      Sun 2019-01-13 14:59:07 CET  2h 45min
   proc-sys-fs-binfmt_misc.automount                                                                loaded    active   waiting   Arbitrary Executable File Formats File System Automount Point
   dev-cdrom.device                                                                                 loaded    active   plugged   VMware_Virtual_IDE_CDROM_Drive
   dev-cdrw.device                                                                                  loaded    active   plugged   VMware_Virtual_IDE_CDROM_Drive
-  dev-disk-by\x2did-ata\x2dVMware_Virtual_IDE_CDROM_Drive_00000000000000000001.device              loaded    active   plugged   VMware_Virtual_IDE_CDROM_Drive
-  dev-disk-by\x2dpartuuid-9cda857f\x2d01.device                                                    loaded    active   plugged   Virtual_disk 1
-  dev-disk-by\x2dpartuuid-e8d9caa2\x2d01.device                                                    loaded    active   plugged   Virtual_disk 1
-  dev-disk-by\x2dpartuuid-e8d9caa2\x2d02.device                                                    loaded    active   plugged   Virtual_disk 2
-  dev-disk-by\x2dpartuuid-e8d9caa2\x2d05.device                                                    loaded    active   plugged   Virtual_disk 5
-  dev-disk-by\x2dpath-pci\x2d0000:00:07.1\x2data\x2d1.device                                       loaded    active   plugged   VMware_Virtual_IDE_CDROM_Drive
-  dev-disk-by\x2dpath-pci\x2d0000:03:00.0\x2dscsi\x2d0:0:0:0.device                                loaded    active   plugged   Virtual_disk
-  dev-disk-by\x2dpath-pci\x2d0000:03:00.0\x2dscsi\x2d0:0:0:0\x2dpart1.device                       loaded    active   plugged   Virtual_disk 1
-  dev-disk-by\x2dpath-pci\x2d0000:03:00.0\x2dscsi\x2d0:0:0:0\x2dpart2.device                       loaded    active   plugged   Virtual_disk 2
-  dev-disk-by\x2dpath-pci\x2d0000:03:00.0\x2dscsi\x2d0:0:0:0\x2dpart5.device                       loaded    active   plugged   Virtual_disk 5
-  dev-disk-by\x2dpath-pci\x2d0000:03:00.0\x2dscsi\x2d0:0:1:0.device                                loaded    active   plugged   Virtual_disk
-  dev-disk-by\x2dpath-pci\x2d0000:03:00.0\x2dscsi\x2d0:0:1:0\x2dpart1.device                       loaded    active   plugged   Virtual_disk 1
-  dev-disk-by\x2duuid-03bd85d4\x2d105b\x2d4333\x2d8f29\x2d26c982ede3eb.device                      loaded    active   plugged   Virtual_disk 1
-  dev-disk-by\x2duuid-92641768\x2d25c5\x2d490e\x2d9ffe\x2de6f55490efe9.device                      loaded    active   plugged   Virtual_disk 5
-  dev-disk-by\x2duuid-b1f1b73a\x2da142\x2d4e12\x2d9c9c\x2d4bc47073c6f5.device                      loaded    active   plugged   Virtual_disk 1
+  dev-disk-by\                                                                                     loaded    active   plugged   VMware_Virtual_IDE_CDROM_Drive
+  dev-disk-by\                                                                                     loaded    active   plugged   Virtual_disk 1
+  dev-disk-by\                                                                                     loaded    active   plugged   Virtual_disk 1
+  dev-disk-by\                                                                                     loaded    active   plugged   Virtual_disk 2
+  dev-disk-by\                                                                                     loaded    active   plugged   Virtual_disk 5
+  dev-disk-by\                                                                                     loaded    active   plugged   VMware_Virtual_IDE_CDROM_Drive
+  dev-disk-by\                                                                                     loaded    active   plugged   Virtual_disk
+  dev-disk-by\                                                                                     loaded    active   plugged   Virtual_disk 1
+  dev-disk-by\                                                                                     loaded    active   plugged   Virtual_disk 2
+  dev-disk-by\                                                                                     loaded    active   plugged   Virtual_disk 5
+  dev-disk-by\                                                                                     loaded    active   plugged   Virtual_disk
+  dev-disk-by\                                                                                     loaded    active   plugged   Virtual_disk 1
+  dev-disk-by\                                                                                     loaded    active   plugged   Virtual_disk 1
+  dev-disk-by\                                                                                     loaded    active   plugged   Virtual_disk 5
+  dev-disk-by\                                                                                     loaded    active   plugged   Virtual_disk 1
   dev-dvd.device                                                                                   loaded    active   plugged   VMware_Virtual_IDE_CDROM_Drive
   dev-sda.device                                                                                   loaded    active   plugged   Virtual_disk
   dev-sda1.device                                                                                  loaded    active   plugged   Virtual_disk 1
@@ -54,18 +54,18 @@ Mon 2019-01-14 14:59:07 CET  21h left      Sun 2019-01-13 14:59:07 CET  2h 45min
   dev-ttyS1.device                                                                                 loaded    active   plugged   /dev/ttyS1
   dev-ttyS2.device                                                                                 loaded    active   plugged   /dev/ttyS2
   dev-ttyS3.device                                                                                 loaded    active   plugged   /dev/ttyS3
-  sys-devices-pci0000:00-0000:00:07.1-ata1-host0-target0:0:0-0:0:0:0-block-sr0.device              loaded    active   plugged   VMware_Virtual_IDE_CDROM_Drive
-  sys-devices-pci0000:00-0000:00:15.0-0000:03:00.0-host2-target2:0:0-2:0:0:0-block-sda-sda1.device loaded    active   plugged   Virtual_disk 1
-  sys-devices-pci0000:00-0000:00:15.0-0000:03:00.0-host2-target2:0:0-2:0:0:0-block-sda-sda2.device loaded    active   plugged   Virtual_disk 2
-  sys-devices-pci0000:00-0000:00:15.0-0000:03:00.0-host2-target2:0:0-2:0:0:0-block-sda-sda5.device loaded    active   plugged   Virtual_disk 5
-  sys-devices-pci0000:00-0000:00:15.0-0000:03:00.0-host2-target2:0:0-2:0:0:0-block-sda.device      loaded    active   plugged   Virtual_disk
-  sys-devices-pci0000:00-0000:00:15.0-0000:03:00.0-host2-target2:0:1-2:0:1:0-block-sdb-sdb1.device loaded    active   plugged   Virtual_disk 1
-  sys-devices-pci0000:00-0000:00:15.0-0000:03:00.0-host2-target2:0:1-2:0:1:0-block-sdb.device      loaded    active   plugged   Virtual_disk
-  sys-devices-pci0000:00-0000:00:16.0-0000:0b:00.0-net-ens192.device                               loaded    active   plugged   VMXNET3 Ethernet Controller
-  sys-devices-platform-serial8250-tty-ttyS0.device                                                 loaded    active   plugged   /sys/devices/platform/serial8250/tty/ttyS0
-  sys-devices-platform-serial8250-tty-ttyS1.device                                                 loaded    active   plugged   /sys/devices/platform/serial8250/tty/ttyS1
-  sys-devices-platform-serial8250-tty-ttyS2.device                                                 loaded    active   plugged   /sys/devices/platform/serial8250/tty/ttyS2
-  sys-devices-platform-serial8250-tty-ttyS3.device                                                 loaded    active   plugged   /sys/devices/platform/serial8250/tty/ttyS3
+  sys-devices-pci0                                                                                 loaded    active   plugged   VMware_Virtual_IDE_CDROM_Drive
+  sys-devices-pci0                                                                                 loaded    active   plugged   Virtual_disk 1
+  sys-devices-pci0                                                                                 loaded    active   plugged   Virtual_disk 2
+  sys-devices-pci0                                                                                 loaded    active   plugged   Virtual_disk 5
+  sys-devices-pci0                                                                                 loaded    active   plugged   Virtual_disk
+  sys-devices-pci0                                                                                 loaded    active   plugged   Virtual_disk 1
+  sys-devices-pci0                                                                                 loaded    active   plugged   Virtual_disk
+  sys-devices-pci0                                                                                 loaded    active   plugged   VMXNET3 Ethernet Controller
+  sys-devices-plat                                                                                 loaded    active   plugged   /sys/devices/platform//tty/ttyS0
+  sys-devices-plat                                                                                 loaded    active   plugged   /sys/devices/platform//tty/ttyS1
+  sys-devices-plat                                                                                 loaded    active   plugged   /sys/devices/platform//tty/ttyS2
+  sys-devices-plat                                                                                 loaded    active   plugged   /sys/devices/platform//tty/ttyS3
   sys-subsystem-net-devices-ens192.device                                                          loaded    active   plugged   VMXNET3 Ethernet Controller
   -.mount                                                                                          loaded    active   mounted   Root Mount
   dev-hugepages.mount                                                                              loaded    active   mounted   Huge Pages File System
@@ -167,9 +167,9 @@ Mon 2019-01-14 14:59:07 CET  21h left      Sun 2019-01-13 14:59:07 CET  2h 45min
   systemd-journald.socket                                                                          loaded    active   running   Journal Socket
   systemd-udevd-control.socket                                                                     loaded    active   running   udev Control Socket
   systemd-udevd-kernel.socket                                                                      loaded    active   running   udev Kernel Socket
-  dev-disk-by\x2dpartuuid-e8d9caa2\x2d05.swap                                                      loaded    active   active    /dev/disk/by-partuuid/e8d9caa2-05
-  dev-disk-by\x2dpath-pci\x2d0000:03:00.0\x2dscsi\x2d0:0:0:0\x2dpart5.swap                         loaded    active   active    /dev/disk/by-path/pci-0000:03:00.0-scsi-0:0:0:0-part5
-  dev-disk-by\x2duuid-92641768\x2d25c5\x2d490e\x2d9ffe\x2de6f55490efe9.swap                        loaded    active   active    /dev/disk/by-uuid/92641768-25c5-490e-9ffe-e6f55490efe9
+  dev-disk-                                                                                        loaded    active   active    /dev/disk/by-partuuid/ 
+  dev-disk-                                                                                        loaded    active   active    /dev/disk/by-path/ 
+  dev-disk-                                                                                        loaded    active   active    /dev/disk/by-uuid/          
   dev-sda5.swap                                                                                    loaded    active   active    /dev/sda5
   basic.target                                                                                     loaded    active   active    Basic System
   cryptsetup.target                                                                                loaded    active   active    Encrypted Volumes
@@ -477,7 +477,7 @@ Perpetual=no
 StartLimitIntervalSec=10000000
 StartLimitBurst=5
 StartLimitAction=none
-InvocationID=a155255c14a043fbab55f4612f86b93a',
+InvocationID=        ',
         'systemctl list-sockets --all --no-pager' => 'LISTEN                          UNIT                            ACTIVATES
 /run/systemd/fsck.progress      systemd-fsckd.socket            systemd-fsckd.service
 /run/systemd/initctl/fifo       systemd-initctl.socket          systemd-initctl.service
