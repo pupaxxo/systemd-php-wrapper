@@ -89,7 +89,7 @@ class SystemdWrapper
      */
     public function start(string $unit)
     {
-        $wrapper = new SimpleCommandWrapper($this->commandExecutor, 'start');
+        $wrapper = new SimpleCommandWrapper($this->commandExecutor, 'start', true);
         return $wrapper->execute([$unit]);
     }
 
@@ -101,7 +101,7 @@ class SystemdWrapper
      */
     public function stop(string $unit)
     {
-        $wrapper = new SimpleCommandWrapper($this->commandExecutor, 'stop');
+        $wrapper = new SimpleCommandWrapper($this->commandExecutor, 'stop', true);
         return $wrapper->execute([$unit]);
     }
 
@@ -114,7 +114,7 @@ class SystemdWrapper
      */
     public function restart(string $unit)
     {
-        $wrapper = new SimpleCommandWrapper($this->commandExecutor, 'restart');
+        $wrapper = new SimpleCommandWrapper($this->commandExecutor, 'restart', true);
         return $wrapper->execute([$unit]);
     }
 
@@ -126,7 +126,7 @@ class SystemdWrapper
      */
     public function reload(string $unit)
     {
-        $wrapper = new SimpleCommandWrapper($this->commandExecutor, 'reload');
+        $wrapper = new SimpleCommandWrapper($this->commandExecutor, 'reload', true);
         return $wrapper->execute([$unit]);
     }
 }
